@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Django Project1</title>
+    <link rel="stylesheet" href="{% static "app_1/styles/style.css"%}">
+
+  </head>
+  <body>
+    <h1>Loading images using static files</h1>
+    <img src="{% static "app_1/images/test_image.png" %}" alt="Missing Image">
+
+    {{insert_me}}
+  </body>
+</html>

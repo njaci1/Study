@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "app_2/styles/style.css" %}"/>
+  </head>
+  <body>
+    <h1>Here are the users</h1>
+
+    {% if records %}
+
+    <ol>
+      {% for person in records %}
+      <li>User Info</li>
+        <ul>
+          <li>First Name: {{person.f_name}}</li>
+          <li>Last Name: {{person.l_name}}</li>
+          <li>Email: {{person.email}}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    {% else %}
+    <h1>NO RECORDS FOUND!</h1>
+
+    {% endif %}
+
+  </body>
+</html>

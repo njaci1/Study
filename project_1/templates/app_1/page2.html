@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "app_1/styles/style.css" %}">
+    <title>Page Two Models</title>
+  </head>
+  <body>
+    <h1>Django level 2</h1>
+    <h2>Accessed records here below</h2>
+
+    <div class="djangotwo">
+      {% if accessed_records %}
+      <table>
+        <thead>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+        </thead>
+        {% for rec in accessed_records %}
+        <tr>
+          <td>{{rec.name}}</td>
+          <td>{{rec.date}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      {% else %}
+      <p>NO RECORDS FOUND!</p>
+
+      {% endif %}
+    </div>
+
+  </body>
+</html>

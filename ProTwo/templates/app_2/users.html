@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "app_2/styles/style.css" %}">
+    <title>users</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1>Model Form Exercise</h1>
+      <h2>Available Users</h2>
+    </div>
+
+    <div class="djangotwo">
+      {% if USERS %}
+      <table class="table table-bordered">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+        </thead>
+        {% for user in USERS %}
+        <tr>
+          <td>{{user.f_name}}</td>
+          <td>{{user.l_name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      {% else %}
+      <p>NO RECORDS FOUND!</p>
+
+      {% endif %}
+    </div>
+
+  </body>
+</html>
